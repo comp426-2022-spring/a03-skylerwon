@@ -19,14 +19,13 @@ app.get('/app/', (req, res) => {
 app.get('/app/flips/:number', (req, res) => {
     res.statusCode = 200;
     const flips = req.params.number;
-    res.json({ "raw": coinFlips(flips), "summary": countFlips(flips) })
+    res.json({"raw": coinFlips(flips), "summary": countFlips(flips) })
 });
 
 app.get('/app/flip/', (req, res) => {
     res.statusCode = 200;
-    res.json({ "flip": coinFlip() })
+    res.json({ "flip": coinFlip()})
 });
-
 
 app.get('/app/flip/call/heads', (req, res) => {
     res.statusCode = 200;
